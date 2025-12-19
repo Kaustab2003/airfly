@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6719ced2c6d909828ff5e3c8eb582b35 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 200px; height: 120px; 
+                background-color: white; border:2px solid grey; z-index:9999; 
+                font-size:14px; padding: 10px">
+    <p style="margin-bottom: 5px;"><b>Route Performance</b></p>
+    <p><span style="color: green;">━━</span> Good (< 5 min delay)</p>
+    <p><span style="color: orange;">━━</span> Fair (5-15 min)</p>
+    <p><span style="color: red;">━━</span> Poor (> 15 min)</p>
+    <p style="font-size: 11px; margin-top: 10px;">Line thickness = volume</p>
+    </div>
+    
+    
+            <div class="folium-map" id="map_6719ced2c6d909828ff5e3c8eb582b35" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6719ced2c6d909828ff5e3c8eb582b35 = L.map(
+                "map_6719ced2c6d909828ff5e3c8eb582b35",
+                {
+                    center: [39.8283, -98.5795],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_98037b976ac599d27c9d43f6b2eade19 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_98037b976ac599d27c9d43f6b2eade19.addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+            var poly_line_9e2e63b173f45ead1bd0a810c640a7a6 = L.polyline(
+                [[33.64044, -84.42694], [32.89595, -97.0372]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_d1eadba97edefb1785c047a83302cf95 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86033fc21de292f07eda7368b0c73883 = $(`<div id="html_86033fc21de292f07eda7368b0c73883" style="width: 100.0%; height: 100.0%;">                 <b>Route: ATL-DFW</b><br>                 Flights: 7,056<br>                 Avg Delay: 2.8 min             </div>`)[0];
+                popup_d1eadba97edefb1785c047a83302cf95.setContent(html_86033fc21de292f07eda7368b0c73883);
+            
+        
+
+        poly_line_9e2e63b173f45ead1bd0a810c640a7a6.bindPopup(popup_d1eadba97edefb1785c047a83302cf95)
+        ;
+
+        
+    
+    
+            var poly_line_77688c73cedea94345747c1a7d299c3b = L.polyline(
+                [[33.64044, -84.42694], [26.07258, -80.15275]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_995d92f69657fb7c5c261fbb03e271f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dcbeb3827bcbf41bcacf8cd7ca466925 = $(`<div id="html_dcbeb3827bcbf41bcacf8cd7ca466925" style="width: 100.0%; height: 100.0%;">                 <b>Route: ATL-FLL</b><br>                 Flights: 7,419<br>                 Avg Delay: 4.0 min             </div>`)[0];
+                popup_995d92f69657fb7c5c261fbb03e271f5.setContent(html_dcbeb3827bcbf41bcacf8cd7ca466925);
+            
+        
+
+        poly_line_77688c73cedea94345747c1a7d299c3b.bindPopup(popup_995d92f69657fb7c5c261fbb03e271f5)
+        ;
+
+        
+    
+    
+            var poly_line_912942904773ca72720bec8c56b27bf5 = L.polyline(
+                [[33.64044, -84.42694], [40.77724, -73.87261]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_c9c07b9571697e3af2ac757b4458a68e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a1dff63c8729c3aa0bcda1a34a1d674 = $(`<div id="html_6a1dff63c8729c3aa0bcda1a34a1d674" style="width: 100.0%; height: 100.0%;">                 <b>Route: ATL-LGA</b><br>                 Flights: 8,234<br>                 Avg Delay: 7.7 min             </div>`)[0];
+                popup_c9c07b9571697e3af2ac757b4458a68e.setContent(html_6a1dff63c8729c3aa0bcda1a34a1d674);
+            
+        
+
+        poly_line_912942904773ca72720bec8c56b27bf5.bindPopup(popup_c9c07b9571697e3af2ac757b4458a68e)
+        ;
+
+        
+    
+    
+            var poly_line_5fe9466862d66a9228d54461976eec33 = L.polyline(
+                [[33.64044, -84.42694], [28.42889, -81.31603]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_d20ca03c5b9a78c1a2d35a9a64db4d11 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ebb4138fb372aec05c1da3399329fa6b = $(`<div id="html_ebb4138fb372aec05c1da3399329fa6b" style="width: 100.0%; height: 100.0%;">                 <b>Route: ATL-MCO</b><br>                 Flights: 8,202<br>                 Avg Delay: 5.5 min             </div>`)[0];
+                popup_d20ca03c5b9a78c1a2d35a9a64db4d11.setContent(html_ebb4138fb372aec05c1da3399329fa6b);
+            
+        
+
+        poly_line_5fe9466862d66a9228d54461976eec33.bindPopup(popup_d20ca03c5b9a78c1a2d35a9a64db4d11)
+        ;
+
+        
+    
+    
+            var poly_line_6bac958f64102f17e51382c7f000ff84 = L.polyline(
+                [[33.64044, -84.42694], [39.87195, -75.24114]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_a9b1fbd9f34213a5f9a1e53e528d0a46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80d02f501f48256c24123dcd91214a95 = $(`<div id="html_80d02f501f48256c24123dcd91214a95" style="width: 100.0%; height: 100.0%;">                 <b>Route: ATL-PHL</b><br>                 Flights: 6,608<br>                 Avg Delay: 5.5 min             </div>`)[0];
+                popup_a9b1fbd9f34213a5f9a1e53e528d0a46.setContent(html_80d02f501f48256c24123dcd91214a95);
+            
+        
+
+        poly_line_6bac958f64102f17e51382c7f000ff84.bindPopup(popup_a9b1fbd9f34213a5f9a1e53e528d0a46)
+        ;
+
+        
+    
+    
+            var poly_line_4863c7429c95e1929636b62063f9c3e8 = L.polyline(
+                [[33.64044, -84.42694], [27.97547, -82.53325]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_8677e13ac29a5743bca53fd288466f15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e51834a87a02d75e2a72a7bb9e13ec2 = $(`<div id="html_9e51834a87a02d75e2a72a7bb9e13ec2" style="width: 100.0%; height: 100.0%;">                 <b>Route: ATL-TPA</b><br>                 Flights: 7,076<br>                 Avg Delay: 5.4 min             </div>`)[0];
+                popup_8677e13ac29a5743bca53fd288466f15.setContent(html_9e51834a87a02d75e2a72a7bb9e13ec2);
+            
+        
+
+        poly_line_4863c7429c95e1929636b62063f9c3e8.bindPopup(popup_8677e13ac29a5743bca53fd288466f15)
+        ;
+
+        
+    
+    
+            var poly_line_4017dc89bb3fe73176117e9beaf398cc = L.polyline(
+                [[42.36435, -71.00518], [38.85208, -77.03772]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_933be4dcdc0b1a25537dc609ca5aafd3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e700d5ba33ba630468d20700c4f798eb = $(`<div id="html_e700d5ba33ba630468d20700c4f798eb" style="width: 100.0%; height: 100.0%;">                 <b>Route: BOS-DCA</b><br>                 Flights: 7,687<br>                 Avg Delay: 2.8 min             </div>`)[0];
+                popup_933be4dcdc0b1a25537dc609ca5aafd3.setContent(html_e700d5ba33ba630468d20700c4f798eb);
+            
+        
+
+        poly_line_4017dc89bb3fe73176117e9beaf398cc.bindPopup(popup_933be4dcdc0b1a25537dc609ca5aafd3)
+        ;
+
+        
+    
+    
+            var poly_line_2348d2760c3015236af03641a4f8d739 = L.polyline(
+                [[42.36435, -71.00518], [40.77724, -73.87261]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_7e9a587d63928b57e510e81ec4b4af21 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7198b1bc1f669d4bc4231b22af22eebe = $(`<div id="html_7198b1bc1f669d4bc4231b22af22eebe" style="width: 100.0%; height: 100.0%;">                 <b>Route: BOS-LGA</b><br>                 Flights: 7,096<br>                 Avg Delay: 8.9 min             </div>`)[0];
+                popup_7e9a587d63928b57e510e81ec4b4af21.setContent(html_7198b1bc1f669d4bc4231b22af22eebe);
+            
+        
+
+        poly_line_2348d2760c3015236af03641a4f8d739.bindPopup(popup_7e9a587d63928b57e510e81ec4b4af21)
+        ;
+
+        
+    
+    
+            var poly_line_6b3db10130f88bdfa853252db7d73316 = L.polyline(
+                [[42.36435, -71.00518], [41.9796, -87.90446]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_157ffab679fa82c2fc3b50cc73a313f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_67a9830c7418309c88159122ba259f64 = $(`<div id="html_67a9830c7418309c88159122ba259f64" style="width: 100.0%; height: 100.0%;">                 <b>Route: BOS-ORD</b><br>                 Flights: 6,551<br>                 Avg Delay: 5.0 min             </div>`)[0];
+                popup_157ffab679fa82c2fc3b50cc73a313f9.setContent(html_67a9830c7418309c88159122ba259f64);
+            
+        
+
+        poly_line_6b3db10130f88bdfa853252db7d73316.bindPopup(popup_157ffab679fa82c2fc3b50cc73a313f9)
+        ;
+
+        
+    
+    
+            var poly_line_a9a39b77b5e2a6d1544b0a1c4af38f9d = L.polyline(
+                [[38.85208, -77.03772], [42.36435, -71.00518]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_2ec951cba6e4dedfdd7edbe6a8f46bad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20d653eb382c625118e6a504a8026583 = $(`<div id="html_20d653eb382c625118e6a504a8026583" style="width: 100.0%; height: 100.0%;">                 <b>Route: DCA-BOS</b><br>                 Flights: 7,686<br>                 Avg Delay: 4.8 min             </div>`)[0];
+                popup_2ec951cba6e4dedfdd7edbe6a8f46bad.setContent(html_20d653eb382c625118e6a504a8026583);
+            
+        
+
+        poly_line_a9a39b77b5e2a6d1544b0a1c4af38f9d.bindPopup(popup_2ec951cba6e4dedfdd7edbe6a8f46bad)
+        ;
+
+        
+    
+    
+            var poly_line_ef0676eae5ae5252ceb5d7176f07de43 = L.polyline(
+                [[39.85841, -104.667], [33.43417, -112.00806]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_978a645937559b9345582408ad0229cd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_631947c3bc6359d97fa2cb122cca2003 = $(`<div id="html_631947c3bc6359d97fa2cb122cca2003" style="width: 100.0%; height: 100.0%;">                 <b>Route: DEN-PHX</b><br>                 Flights: 7,211<br>                 Avg Delay: 6.3 min             </div>`)[0];
+                popup_978a645937559b9345582408ad0229cd.setContent(html_631947c3bc6359d97fa2cb122cca2003);
+            
+        
+
+        poly_line_ef0676eae5ae5252ceb5d7176f07de43.bindPopup(popup_978a645937559b9345582408ad0229cd)
+        ;
+
+        
+    
+    
+            var poly_line_7bffcd0af85c90880a259335ed4f67ed = L.polyline(
+                [[32.89595, -97.0372], [33.64044, -84.42694]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_631f8622e05df6c43c60a50a785d1e3c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc4bafec1794a824abb26fa667c38807 = $(`<div id="html_bc4bafec1794a824abb26fa667c38807" style="width: 100.0%; height: 100.0%;">                 <b>Route: DFW-ATL</b><br>                 Flights: 7,060<br>                 Avg Delay: 6.1 min             </div>`)[0];
+                popup_631f8622e05df6c43c60a50a785d1e3c.setContent(html_bc4bafec1794a824abb26fa667c38807);
+            
+        
+
+        poly_line_7bffcd0af85c90880a259335ed4f67ed.bindPopup(popup_631f8622e05df6c43c60a50a785d1e3c)
+        ;
+
+        
+    
+    
+            var poly_line_20cc161c6ccad2f7cbb99f7e03dfee95 = L.polyline(
+                [[32.89595, -97.0372], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_cd80f1ca4855c35c404ed8508347ea93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_173b28423847690d12df7998a5b3440c = $(`<div id="html_173b28423847690d12df7998a5b3440c" style="width: 100.0%; height: 100.0%;">                 <b>Route: DFW-LAX</b><br>                 Flights: 6,634<br>                 Avg Delay: 6.8 min             </div>`)[0];
+                popup_cd80f1ca4855c35c404ed8508347ea93.setContent(html_173b28423847690d12df7998a5b3440c);
+            
+        
+
+        poly_line_20cc161c6ccad2f7cbb99f7e03dfee95.bindPopup(popup_cd80f1ca4855c35c404ed8508347ea93)
+        ;
+
+        
+    
+    
+            var poly_line_eef05892f87d6a35157e64057e9e24b2 = L.polyline(
+                [[32.89595, -97.0372], [41.9796, -87.90446]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_ba232b59be784d5504f00024536d63ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0893e4da6a0db176103568694f4e1891 = $(`<div id="html_0893e4da6a0db176103568694f4e1891" style="width: 100.0%; height: 100.0%;">                 <b>Route: DFW-ORD</b><br>                 Flights: 7,870<br>                 Avg Delay: 6.8 min             </div>`)[0];
+                popup_ba232b59be784d5504f00024536d63ba.setContent(html_0893e4da6a0db176103568694f4e1891);
+            
+        
+
+        poly_line_eef05892f87d6a35157e64057e9e24b2.bindPopup(popup_ba232b59be784d5504f00024536d63ba)
+        ;
+
+        
+    
+    
+            var poly_line_1e945d34f70929f289498d28bb7f69ff = L.polyline(
+                [[26.07258, -80.15275], [33.64044, -84.42694]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_2e73968c8c0fbd164cf315db79775c8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ef85ac2b15b942cfcbb48525de0476f = $(`<div id="html_5ef85ac2b15b942cfcbb48525de0476f" style="width: 100.0%; height: 100.0%;">                 <b>Route: FLL-ATL</b><br>                 Flights: 7,411<br>                 Avg Delay: -0.8 min             </div>`)[0];
+                popup_2e73968c8c0fbd164cf315db79775c8d.setContent(html_5ef85ac2b15b942cfcbb48525de0476f);
+            
+        
+
+        poly_line_1e945d34f70929f289498d28bb7f69ff.bindPopup(popup_2e73968c8c0fbd164cf315db79775c8d)
+        ;
+
+        
+    
+    
+            var poly_line_dac4c622bb6f70417d2803ffa47090af = L.polyline(
+                [[21.31869, -157.92241], [20.89865, -156.43046]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_ece4b5cd5cb147f31564aad27881649b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7de34cf61a89a1dc9d70fb5ff04dd42 = $(`<div id="html_b7de34cf61a89a1dc9d70fb5ff04dd42" style="width: 100.0%; height: 100.0%;">                 <b>Route: HNL-OGG</b><br>                 Flights: 8,282<br>                 Avg Delay: 1.6 min             </div>`)[0];
+                popup_ece4b5cd5cb147f31564aad27881649b.setContent(html_b7de34cf61a89a1dc9d70fb5ff04dd42);
+            
+        
+
+        poly_line_dac4c622bb6f70417d2803ffa47090af.bindPopup(popup_ece4b5cd5cb147f31564aad27881649b)
+        ;
+
+        
+    
+    
+            var poly_line_28cc935395ef164e76791a8f65a8bfb7 = L.polyline(
+                [[40.63975, -73.77893], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_eb8e3106d787b3530a178268610b3e07 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_857bc5039ebc09e0fa2f3bd8a50b3a0a = $(`<div id="html_857bc5039ebc09e0fa2f3bd8a50b3a0a" style="width: 100.0%; height: 100.0%;">                 <b>Route: JFK-LAX</b><br>                 Flights: 12,016<br>                 Avg Delay: -2.6 min             </div>`)[0];
+                popup_eb8e3106d787b3530a178268610b3e07.setContent(html_857bc5039ebc09e0fa2f3bd8a50b3a0a);
+            
+        
+
+        poly_line_28cc935395ef164e76791a8f65a8bfb7.bindPopup(popup_eb8e3106d787b3530a178268610b3e07)
+        ;
+
+        
+    
+    
+            var poly_line_b0a735224c4dbf76ec01a68b1c23eec7 = L.polyline(
+                [[40.63975, -73.77893], [37.619, -122.37484]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_c6db4706646e913767c7cab310491596 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_15c9b760e64e2ee535d255a0431ac9a4 = $(`<div id="html_15c9b760e64e2ee535d255a0431ac9a4" style="width: 100.0%; height: 100.0%;">                 <b>Route: JFK-SFO</b><br>                 Flights: 8,437<br>                 Avg Delay: -0.5 min             </div>`)[0];
+                popup_c6db4706646e913767c7cab310491596.setContent(html_15c9b760e64e2ee535d255a0431ac9a4);
+            
+        
+
+        poly_line_b0a735224c4dbf76ec01a68b1c23eec7.bindPopup(popup_c6db4706646e913767c7cab310491596)
+        ;
+
+        
+    
+    
+            var poly_line_101d9f1cc824c5e1ff34a19f6f2051db = L.polyline(
+                [[36.08036, -115.15233], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_285da8e7dca37ba21cdfdd1546986af1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3a7210d1bc580f3242cf912673c94c86 = $(`<div id="html_3a7210d1bc580f3242cf912673c94c86" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAS-LAX</b><br>                 Flights: 9,715<br>                 Avg Delay: 11.9 min             </div>`)[0];
+                popup_285da8e7dca37ba21cdfdd1546986af1.setContent(html_3a7210d1bc580f3242cf912673c94c86);
+            
+        
+
+        poly_line_101d9f1cc824c5e1ff34a19f6f2051db.bindPopup(popup_285da8e7dca37ba21cdfdd1546986af1)
+        ;
+
+        
+    
+    
+            var poly_line_5768dae118e3e97b86661947ffe1bb77 = L.polyline(
+                [[36.08036, -115.15233], [37.619, -122.37484]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_8378e0992cd80a6ae196ffb7a6bdc3e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35e527832c7608613c6a7e5c7ecb15f7 = $(`<div id="html_35e527832c7608613c6a7e5c7ecb15f7" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAS-SFO</b><br>                 Flights: 7,870<br>                 Avg Delay: 9.7 min             </div>`)[0];
+                popup_8378e0992cd80a6ae196ffb7a6bdc3e9.setContent(html_35e527832c7608613c6a7e5c7ecb15f7);
+            
+        
+
+        poly_line_5768dae118e3e97b86661947ffe1bb77.bindPopup(popup_8378e0992cd80a6ae196ffb7a6bdc3e9)
+        ;
+
+        
+    
+    
+            var poly_line_355bb17a34323a6da18707580fea37e6 = L.polyline(
+                [[33.94254, -118.40807], [32.89595, -97.0372]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_9a2264537cb997e74bf7f108f7823b80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8849f4232015200e378b159215f48ecf = $(`<div id="html_8849f4232015200e378b159215f48ecf" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-DFW</b><br>                 Flights: 6,649<br>                 Avg Delay: 5.2 min             </div>`)[0];
+                popup_9a2264537cb997e74bf7f108f7823b80.setContent(html_8849f4232015200e378b159215f48ecf);
+            
+        
+
+        poly_line_355bb17a34323a6da18707580fea37e6.bindPopup(popup_9a2264537cb997e74bf7f108f7823b80)
+        ;
+
+        
+    
+    
+            var poly_line_57cf943bf103736855ab96ed07e61b98 = L.polyline(
+                [[33.94254, -118.40807], [40.63975, -73.77893]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_ced8029d1638487a8fd05817ad1e2a7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd86b56eee95411ae3473b78e0c0ea7c = $(`<div id="html_bd86b56eee95411ae3473b78e0c0ea7c" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-JFK</b><br>                 Flights: 12,015<br>                 Avg Delay: 0.6 min             </div>`)[0];
+                popup_ced8029d1638487a8fd05817ad1e2a7f.setContent(html_bd86b56eee95411ae3473b78e0c0ea7c);
+            
+        
+
+        poly_line_57cf943bf103736855ab96ed07e61b98.bindPopup(popup_ced8029d1638487a8fd05817ad1e2a7f)
+        ;
+
+        
+    
+    
+            var poly_line_679f16061068753ccf520577add15914 = L.polyline(
+                [[33.94254, -118.40807], [36.08036, -115.15233]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_480cebc98759e81c06641a8bf20bfc6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bcad579927c1b12eabf336da7e98004 = $(`<div id="html_0bcad579927c1b12eabf336da7e98004" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-LAS</b><br>                 Flights: 9,594<br>                 Avg Delay: 8.6 min             </div>`)[0];
+                popup_480cebc98759e81c06641a8bf20bfc6c.setContent(html_0bcad579927c1b12eabf336da7e98004);
+            
+        
+
+        poly_line_679f16061068753ccf520577add15914.bindPopup(popup_480cebc98759e81c06641a8bf20bfc6c)
+        ;
+
+        
+    
+    
+            var poly_line_d7e4f25378ac95b83f84ac4d72bfb376 = L.polyline(
+                [[33.94254, -118.40807], [41.9796, -87.90446]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_f8f4c2ac667ffc809df09028876fb916 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_301c24494fc31ca5eed82a53a52b6a2f = $(`<div id="html_301c24494fc31ca5eed82a53a52b6a2f" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-ORD</b><br>                 Flights: 8,256<br>                 Avg Delay: 3.6 min             </div>`)[0];
+                popup_f8f4c2ac667ffc809df09028876fb916.setContent(html_301c24494fc31ca5eed82a53a52b6a2f);
+            
+        
+
+        poly_line_d7e4f25378ac95b83f84ac4d72bfb376.bindPopup(popup_f8f4c2ac667ffc809df09028876fb916)
+        ;
+
+        
+    
+    
+            var poly_line_5bc301e751b2302920b56da6eb177a6b = L.polyline(
+                [[33.94254, -118.40807], [33.43417, -112.00806]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_df1ffd9d2e40581415916278b073098f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36db4a5fbafb261e521d69acc22235ee = $(`<div id="html_36db4a5fbafb261e521d69acc22235ee" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-PHX</b><br>                 Flights: 7,330<br>                 Avg Delay: 9.3 min             </div>`)[0];
+                popup_df1ffd9d2e40581415916278b073098f.setContent(html_36db4a5fbafb261e521d69acc22235ee);
+            
+        
+
+        poly_line_5bc301e751b2302920b56da6eb177a6b.bindPopup(popup_df1ffd9d2e40581415916278b073098f)
+        ;
+
+        
+    
+    
+            var poly_line_4ba1de4de6b504a117725105db6c9f9b = L.polyline(
+                [[33.94254, -118.40807], [47.44898, -122.30931]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_a9d73e3a783a2c74b04aa1f317e9f7a1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2f6649637e0cf4cc12befc1b8b5b265 = $(`<div id="html_c2f6649637e0cf4cc12befc1b8b5b265" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-SEA</b><br>                 Flights: 7,732<br>                 Avg Delay: 1.5 min             </div>`)[0];
+                popup_a9d73e3a783a2c74b04aa1f317e9f7a1.setContent(html_c2f6649637e0cf4cc12befc1b8b5b265);
+            
+        
+
+        poly_line_4ba1de4de6b504a117725105db6c9f9b.bindPopup(popup_a9d73e3a783a2c74b04aa1f317e9f7a1)
+        ;
+
+        
+    
+    
+            var poly_line_33276c2046bec6097c4e1059a6859c0d = L.polyline(
+                [[33.94254, -118.40807], [37.619, -122.37484]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_467f24e3624af0dec56f256c44ae7ab1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2720a04eabf966dceed8433407381998 = $(`<div id="html_2720a04eabf966dceed8433407381998" style="width: 100.0%; height: 100.0%;">                 <b>Route: LAX-SFO</b><br>                 Flights: 13,457<br>                 Avg Delay: 10.5 min             </div>`)[0];
+                popup_467f24e3624af0dec56f256c44ae7ab1.setContent(html_2720a04eabf966dceed8433407381998);
+            
+        
+
+        poly_line_33276c2046bec6097c4e1059a6859c0d.bindPopup(popup_467f24e3624af0dec56f256c44ae7ab1)
+        ;
+
+        
+    
+    
+            var poly_line_93c4347a914837655c2639d38971ca7a = L.polyline(
+                [[40.77724, -73.87261], [33.64044, -84.42694]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_fc5b308406b41ebf83480d4c3fdc5ba3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cdd0c3212b5d3a382ab99a21b9a2d27 = $(`<div id="html_4cdd0c3212b5d3a382ab99a21b9a2d27" style="width: 100.0%; height: 100.0%;">                 <b>Route: LGA-ATL</b><br>                 Flights: 8,215<br>                 Avg Delay: 2.9 min             </div>`)[0];
+                popup_fc5b308406b41ebf83480d4c3fdc5ba3.setContent(html_4cdd0c3212b5d3a382ab99a21b9a2d27);
+            
+        
+
+        poly_line_93c4347a914837655c2639d38971ca7a.bindPopup(popup_fc5b308406b41ebf83480d4c3fdc5ba3)
+        ;
+
+        
+    
+    
+            var poly_line_1a8aa63ec24c093415e8e0ff628be3fc = L.polyline(
+                [[40.77724, -73.87261], [42.36435, -71.00518]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_5fbec41d41d9fe5adeb024472356c089 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a31942163b74c061a566cdaddbe516e = $(`<div id="html_7a31942163b74c061a566cdaddbe516e" style="width: 100.0%; height: 100.0%;">                 <b>Route: LGA-BOS</b><br>                 Flights: 7,100<br>                 Avg Delay: 7.3 min             </div>`)[0];
+                popup_5fbec41d41d9fe5adeb024472356c089.setContent(html_7a31942163b74c061a566cdaddbe516e);
+            
+        
+
+        poly_line_1a8aa63ec24c093415e8e0ff628be3fc.bindPopup(popup_5fbec41d41d9fe5adeb024472356c089)
+        ;
+
+        
+    
+    
+            var poly_line_66558bf03fd91c640be692ab126f9878 = L.polyline(
+                [[40.77724, -73.87261], [41.9796, -87.90446]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_9bc3edfa8edc403e43ae83d2131abfc3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ad3e96164572ec31539ee635dede394 = $(`<div id="html_8ad3e96164572ec31539ee635dede394" style="width: 100.0%; height: 100.0%;">                 <b>Route: LGA-ORD</b><br>                 Flights: 9,639<br>                 Avg Delay: 3.6 min             </div>`)[0];
+                popup_9bc3edfa8edc403e43ae83d2131abfc3.setContent(html_8ad3e96164572ec31539ee635dede394);
+            
+        
+
+        poly_line_66558bf03fd91c640be692ab126f9878.bindPopup(popup_9bc3edfa8edc403e43ae83d2131abfc3)
+        ;
+
+        
+    
+    
+            var poly_line_0d996efe9850fe4b00d644f12ac7b255 = L.polyline(
+                [[28.42889, -81.31603], [33.64044, -84.42694]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_da893f520a40a87920421db5bf7bc0f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_892b2610336415afe6f1d9acd26fb8f3 = $(`<div id="html_892b2610336415afe6f1d9acd26fb8f3" style="width: 100.0%; height: 100.0%;">                 <b>Route: MCO-ATL</b><br>                 Flights: 8,202<br>                 Avg Delay: 1.4 min             </div>`)[0];
+                popup_da893f520a40a87920421db5bf7bc0f0.setContent(html_892b2610336415afe6f1d9acd26fb8f3);
+            
+        
+
+        poly_line_0d996efe9850fe4b00d644f12ac7b255.bindPopup(popup_da893f520a40a87920421db5bf7bc0f0)
+        ;
+
+        
+    
+    
+            var poly_line_5db7fb19f557c7293687c536f12e08e6 = L.polyline(
+                [[20.89865, -156.43046], [21.31869, -157.92241]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_e8b8665d98482ebb24ea6bd385204dc0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eff80b94a8eca749d6265aa0cb357a4e = $(`<div id="html_eff80b94a8eca749d6265aa0cb357a4e" style="width: 100.0%; height: 100.0%;">                 <b>Route: OGG-HNL</b><br>                 Flights: 8,313<br>                 Avg Delay: 3.6 min             </div>`)[0];
+                popup_e8b8665d98482ebb24ea6bd385204dc0.setContent(html_eff80b94a8eca749d6265aa0cb357a4e);
+            
+        
+
+        poly_line_5db7fb19f557c7293687c536f12e08e6.bindPopup(popup_e8b8665d98482ebb24ea6bd385204dc0)
+        ;
+
+        
+    
+    
+            var poly_line_83ed23b97bfe11fd47398540c42d268d = L.polyline(
+                [[41.9796, -87.90446], [42.36435, -71.00518]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_3cc1206c8b521f7b6c4bfb1bce738216 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cfd0dcde8e4a32f985ecb19543a81b3 = $(`<div id="html_4cfd0dcde8e4a32f985ecb19543a81b3" style="width: 100.0%; height: 100.0%;">                 <b>Route: ORD-BOS</b><br>                 Flights: 6,558<br>                 Avg Delay: 7.7 min             </div>`)[0];
+                popup_3cc1206c8b521f7b6c4bfb1bce738216.setContent(html_4cfd0dcde8e4a32f985ecb19543a81b3);
+            
+        
+
+        poly_line_83ed23b97bfe11fd47398540c42d268d.bindPopup(popup_3cc1206c8b521f7b6c4bfb1bce738216)
+        ;
+
+        
+    
+    
+            var poly_line_c9bf51888fd0974a031d0a479331d7e4 = L.polyline(
+                [[41.9796, -87.90446], [32.89595, -97.0372]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_1b80da163070401146e2c6cb5ed7b4db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b9270496233e069a6167e0ab35be648 = $(`<div id="html_1b9270496233e069a6167e0ab35be648" style="width: 100.0%; height: 100.0%;">                 <b>Route: ORD-DFW</b><br>                 Flights: 7,677<br>                 Avg Delay: 8.7 min             </div>`)[0];
+                popup_1b80da163070401146e2c6cb5ed7b4db.setContent(html_1b9270496233e069a6167e0ab35be648);
+            
+        
+
+        poly_line_c9bf51888fd0974a031d0a479331d7e4.bindPopup(popup_1b80da163070401146e2c6cb5ed7b4db)
+        ;
+
+        
+    
+    
+            var poly_line_b49b5729fdff6841107cc289ef460a98 = L.polyline(
+                [[41.9796, -87.90446], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_227fd4f317f853f377b884d10ab40b5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24608c4781ad45931355d26c52046cb4 = $(`<div id="html_24608c4781ad45931355d26c52046cb4" style="width: 100.0%; height: 100.0%;">                 <b>Route: ORD-LAX</b><br>                 Flights: 7,941<br>                 Avg Delay: 8.2 min             </div>`)[0];
+                popup_227fd4f317f853f377b884d10ab40b5a.setContent(html_24608c4781ad45931355d26c52046cb4);
+            
+        
+
+        poly_line_b49b5729fdff6841107cc289ef460a98.bindPopup(popup_227fd4f317f853f377b884d10ab40b5a)
+        ;
+
+        
+    
+    
+            var poly_line_ecb2c58b01835cfb43a3cbb4b9914b37 = L.polyline(
+                [[41.9796, -87.90446], [40.77724, -73.87261]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_1dad8b9ddaf55f66478ca65d9d733ada = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_446a0d8f81c348d5859165a76c0349f0 = $(`<div id="html_446a0d8f81c348d5859165a76c0349f0" style="width: 100.0%; height: 100.0%;">                 <b>Route: ORD-LGA</b><br>                 Flights: 9,575<br>                 Avg Delay: 9.8 min             </div>`)[0];
+                popup_1dad8b9ddaf55f66478ca65d9d733ada.setContent(html_446a0d8f81c348d5859165a76c0349f0);
+            
+        
+
+        poly_line_ecb2c58b01835cfb43a3cbb4b9914b37.bindPopup(popup_1dad8b9ddaf55f66478ca65d9d733ada)
+        ;
+
+        
+    
+    
+            var poly_line_e5da66515bb3effd811b172109a39f2a = L.polyline(
+                [[41.9796, -87.90446], [37.619, -122.37484]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_5a3fc87fa65a511fa19b673a81f1fbca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cdccfc3f68a60b6daaa8d60d94482f93 = $(`<div id="html_cdccfc3f68a60b6daaa8d60d94482f93" style="width: 100.0%; height: 100.0%;">                 <b>Route: ORD-SFO</b><br>                 Flights: 7,378<br>                 Avg Delay: 9.1 min             </div>`)[0];
+                popup_5a3fc87fa65a511fa19b673a81f1fbca.setContent(html_cdccfc3f68a60b6daaa8d60d94482f93);
+            
+        
+
+        poly_line_e5da66515bb3effd811b172109a39f2a.bindPopup(popup_5a3fc87fa65a511fa19b673a81f1fbca)
+        ;
+
+        
+    
+    
+            var poly_line_dd42326c9f2d2296b7faf38ed9af9132 = L.polyline(
+                [[39.87195, -75.24114], [33.64044, -84.42694]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_d15cbb1197e6a5295036afcb6c9329e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2aea6487bded9ae887f5febdb0c3233d = $(`<div id="html_2aea6487bded9ae887f5febdb0c3233d" style="width: 100.0%; height: 100.0%;">                 <b>Route: PHL-ATL</b><br>                 Flights: 6,621<br>                 Avg Delay: 2.1 min             </div>`)[0];
+                popup_d15cbb1197e6a5295036afcb6c9329e7.setContent(html_2aea6487bded9ae887f5febdb0c3233d);
+            
+        
+
+        poly_line_dd42326c9f2d2296b7faf38ed9af9132.bindPopup(popup_d15cbb1197e6a5295036afcb6c9329e7)
+        ;
+
+        
+    
+    
+            var poly_line_a1ffe5c01872fdac25333377f6c9a9cf = L.polyline(
+                [[33.43417, -112.00806], [39.85841, -104.667]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_0a782774678f1b3cce75cf6d4fbc9531 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cf0852045686b6f336fe4d9563de007 = $(`<div id="html_6cf0852045686b6f336fe4d9563de007" style="width: 100.0%; height: 100.0%;">                 <b>Route: PHX-DEN</b><br>                 Flights: 7,204<br>                 Avg Delay: 5.7 min             </div>`)[0];
+                popup_0a782774678f1b3cce75cf6d4fbc9531.setContent(html_6cf0852045686b6f336fe4d9563de007);
+            
+        
+
+        poly_line_a1ffe5c01872fdac25333377f6c9a9cf.bindPopup(popup_0a782774678f1b3cce75cf6d4fbc9531)
+        ;
+
+        
+    
+    
+            var poly_line_ab5295be41a7b337380f1125e5a46947 = L.polyline(
+                [[33.43417, -112.00806], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_22540a38631644131fb6123498be6b6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c428ad24d303c880dc3e02cc53b66037 = $(`<div id="html_c428ad24d303c880dc3e02cc53b66037" style="width: 100.0%; height: 100.0%;">                 <b>Route: PHX-LAX</b><br>                 Flights: 7,380<br>                 Avg Delay: 8.7 min             </div>`)[0];
+                popup_22540a38631644131fb6123498be6b6c.setContent(html_c428ad24d303c880dc3e02cc53b66037);
+            
+        
+
+        poly_line_ab5295be41a7b337380f1125e5a46947.bindPopup(popup_22540a38631644131fb6123498be6b6c)
+        ;
+
+        
+    
+    
+            var poly_line_c519510d02ee1f22631741ebe7228e33 = L.polyline(
+                [[32.73356, -117.18966], [37.619, -122.37484]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_ff63d65fd7ca421257b77345b7590456 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c870c0131f0f6a9d657272516b3d35d = $(`<div id="html_2c870c0131f0f6a9d657272516b3d35d" style="width: 100.0%; height: 100.0%;">                 <b>Route: SAN-SFO</b><br>                 Flights: 6,942<br>                 Avg Delay: 9.0 min             </div>`)[0];
+                popup_ff63d65fd7ca421257b77345b7590456.setContent(html_2c870c0131f0f6a9d657272516b3d35d);
+            
+        
+
+        poly_line_c519510d02ee1f22631741ebe7228e33.bindPopup(popup_ff63d65fd7ca421257b77345b7590456)
+        ;
+
+        
+    
+    
+            var poly_line_18d4adb8d702ac9d49af8fec1429d772 = L.polyline(
+                [[47.44898, -122.30931], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_f45b2af9e359dfd26a5ba4f849a63c29 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cc6bf7549edd31a5f8cbdde5db053188 = $(`<div id="html_cc6bf7549edd31a5f8cbdde5db053188" style="width: 100.0%; height: 100.0%;">                 <b>Route: SEA-LAX</b><br>                 Flights: 7,765<br>                 Avg Delay: 3.7 min             </div>`)[0];
+                popup_f45b2af9e359dfd26a5ba4f849a63c29.setContent(html_cc6bf7549edd31a5f8cbdde5db053188);
+            
+        
+
+        poly_line_18d4adb8d702ac9d49af8fec1429d772.bindPopup(popup_f45b2af9e359dfd26a5ba4f849a63c29)
+        ;
+
+        
+    
+    
+            var poly_line_a93e0f542f14ca20aef775567d67c792 = L.polyline(
+                [[47.44898, -122.30931], [37.619, -122.37484]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_c515c9744dcb399a75328e114d4b939b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9bcf54c3993c6e7f06e10a08a0de7c72 = $(`<div id="html_9bcf54c3993c6e7f06e10a08a0de7c72" style="width: 100.0%; height: 100.0%;">                 <b>Route: SEA-SFO</b><br>                 Flights: 6,845<br>                 Avg Delay: 7.4 min             </div>`)[0];
+                popup_c515c9744dcb399a75328e114d4b939b.setContent(html_9bcf54c3993c6e7f06e10a08a0de7c72);
+            
+        
+
+        poly_line_a93e0f542f14ca20aef775567d67c792.bindPopup(popup_c515c9744dcb399a75328e114d4b939b)
+        ;
+
+        
+    
+    
+            var poly_line_bd8d0e0ecaa0ceaad0f03d0502dc1ef9 = L.polyline(
+                [[37.619, -122.37484], [40.63975, -73.77893]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_10c972bd90bcafd4bb44fa14c7bf7cb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_28756dfce645f7834e0a0530ffa2652b = $(`<div id="html_28756dfce645f7834e0a0530ffa2652b" style="width: 100.0%; height: 100.0%;">                 <b>Route: SFO-JFK</b><br>                 Flights: 8,440<br>                 Avg Delay: 2.1 min             </div>`)[0];
+                popup_10c972bd90bcafd4bb44fa14c7bf7cb8.setContent(html_28756dfce645f7834e0a0530ffa2652b);
+            
+        
+
+        poly_line_bd8d0e0ecaa0ceaad0f03d0502dc1ef9.bindPopup(popup_10c972bd90bcafd4bb44fa14c7bf7cb8)
+        ;
+
+        
+    
+    
+            var poly_line_14388b6183e53d3c8d87655d6658b005 = L.polyline(
+                [[37.619, -122.37484], [36.08036, -115.15233]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_5cef7035d681407052ebddc2f3933074 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a429aab59b0b93365d87dab005f6697 = $(`<div id="html_6a429aab59b0b93365d87dab005f6697" style="width: 100.0%; height: 100.0%;">                 <b>Route: SFO-LAS</b><br>                 Flights: 7,995<br>                 Avg Delay: 6.3 min             </div>`)[0];
+                popup_5cef7035d681407052ebddc2f3933074.setContent(html_6a429aab59b0b93365d87dab005f6697);
+            
+        
+
+        poly_line_14388b6183e53d3c8d87655d6658b005.bindPopup(popup_5cef7035d681407052ebddc2f3933074)
+        ;
+
+        
+    
+    
+            var poly_line_2cb092d858e7f8f8c431470881dba69b = L.polyline(
+                [[37.619, -122.37484], [33.94254, -118.40807]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_18605a47c05e5acd748f96ffb55669f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66eadd5ae84c64f2bf4244a63ba9bee6 = $(`<div id="html_66eadd5ae84c64f2bf4244a63ba9bee6" style="width: 100.0%; height: 100.0%;">                 <b>Route: SFO-LAX</b><br>                 Flights: 13,744<br>                 Avg Delay: 11.2 min             </div>`)[0];
+                popup_18605a47c05e5acd748f96ffb55669f6.setContent(html_66eadd5ae84c64f2bf4244a63ba9bee6);
+            
+        
+
+        poly_line_2cb092d858e7f8f8c431470881dba69b.bindPopup(popup_18605a47c05e5acd748f96ffb55669f6)
+        ;
+
+        
+    
+    
+            var poly_line_92b1825134f3fd5456c76529cf954086 = L.polyline(
+                [[37.619, -122.37484], [41.9796, -87.90446]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_3f3821c237149a161d64118e615426fe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e943ae8600e43b768db3e6128666aed = $(`<div id="html_3e943ae8600e43b768db3e6128666aed" style="width: 100.0%; height: 100.0%;">                 <b>Route: SFO-ORD</b><br>                 Flights: 7,380<br>                 Avg Delay: 5.2 min             </div>`)[0];
+                popup_3f3821c237149a161d64118e615426fe.setContent(html_3e943ae8600e43b768db3e6128666aed);
+            
+        
+
+        poly_line_92b1825134f3fd5456c76529cf954086.bindPopup(popup_3f3821c237149a161d64118e615426fe)
+        ;
+
+        
+    
+    
+            var poly_line_99d40641bec3ff5ffe96da39b4907870 = L.polyline(
+                [[37.619, -122.37484], [32.73356, -117.18966]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_3d08c796e1b4e0801d79989a4edda89e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6889a0d98674f8882f12c5882b18db94 = $(`<div id="html_6889a0d98674f8882f12c5882b18db94" style="width: 100.0%; height: 100.0%;">                 <b>Route: SFO-SAN</b><br>                 Flights: 6,917<br>                 Avg Delay: 5.8 min             </div>`)[0];
+                popup_3d08c796e1b4e0801d79989a4edda89e.setContent(html_6889a0d98674f8882f12c5882b18db94);
+            
+        
+
+        poly_line_99d40641bec3ff5ffe96da39b4907870.bindPopup(popup_3d08c796e1b4e0801d79989a4edda89e)
+        ;
+
+        
+    
+    
+            var poly_line_ffc5c847b6937ec58cd0574a682dec57 = L.polyline(
+                [[37.619, -122.37484], [47.44898, -122.30931]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_cc92601e2dab2916000810a7d028941b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14acafc535e162e46d1fb5ea48ad7857 = $(`<div id="html_14acafc535e162e46d1fb5ea48ad7857" style="width: 100.0%; height: 100.0%;">                 <b>Route: SFO-SEA</b><br>                 Flights: 6,932<br>                 Avg Delay: 5.8 min             </div>`)[0];
+                popup_cc92601e2dab2916000810a7d028941b.setContent(html_14acafc535e162e46d1fb5ea48ad7857);
+            
+        
+
+        poly_line_ffc5c847b6937ec58cd0574a682dec57.bindPopup(popup_cc92601e2dab2916000810a7d028941b)
+        ;
+
+        
+    
+    
+            var poly_line_18c727be8046d5064a5d7af1ce72d5c8 = L.polyline(
+                [[27.97547, -82.53325], [33.64044, -84.42694]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.6, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_c89c599d4c095c44e184c850fe773bed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e83030f82cacfe06e247704c5c573b75 = $(`<div id="html_e83030f82cacfe06e247704c5c573b75" style="width: 100.0%; height: 100.0%;">                 <b>Route: TPA-ATL</b><br>                 Flights: 7,083<br>                 Avg Delay: 2.3 min             </div>`)[0];
+                popup_c89c599d4c095c44e184c850fe773bed.setContent(html_e83030f82cacfe06e247704c5c573b75);
+            
+        
+
+        poly_line_18c727be8046d5064a5d7af1ce72d5c8.bindPopup(popup_c89c599d4c095c44e184c850fe773bed)
+        ;
+
+        
+    
+    
+            var circle_marker_fc17048fbdd8f787eafa0294f18d1bdb = L.circleMarker(
+                [33.64044, -84.42694],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_c2741315e65928212618a05fb0e30282 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0af67d069a2f22cd51d780414fcb46b = $(`<div id="html_f0af67d069a2f22cd51d780414fcb46b" style="width: 100.0%; height: 100.0%;"><b>ATL</b></div>`)[0];
+                popup_c2741315e65928212618a05fb0e30282.setContent(html_f0af67d069a2f22cd51d780414fcb46b);
+            
+        
+
+        circle_marker_fc17048fbdd8f787eafa0294f18d1bdb.bindPopup(popup_c2741315e65928212618a05fb0e30282)
+        ;
+
+        
+    
+    
+            var circle_marker_313d7ac85c23c1ba38bac098cc53bb96 = L.circleMarker(
+                [42.36435, -71.00518],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_5837bc2a38f026eab0dc2e9a919457ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_345deb150ea236ef9d43f445639e3466 = $(`<div id="html_345deb150ea236ef9d43f445639e3466" style="width: 100.0%; height: 100.0%;"><b>BOS</b></div>`)[0];
+                popup_5837bc2a38f026eab0dc2e9a919457ff.setContent(html_345deb150ea236ef9d43f445639e3466);
+            
+        
+
+        circle_marker_313d7ac85c23c1ba38bac098cc53bb96.bindPopup(popup_5837bc2a38f026eab0dc2e9a919457ff)
+        ;
+
+        
+    
+    
+            var circle_marker_18a3e2b10851a8d38846bc0a0fdea450 = L.circleMarker(
+                [38.85208, -77.03772],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_1d78cf7310b4e130a8580a899a8ed163 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91c3b010d37c00a40b20e53eebae648a = $(`<div id="html_91c3b010d37c00a40b20e53eebae648a" style="width: 100.0%; height: 100.0%;"><b>DCA</b></div>`)[0];
+                popup_1d78cf7310b4e130a8580a899a8ed163.setContent(html_91c3b010d37c00a40b20e53eebae648a);
+            
+        
+
+        circle_marker_18a3e2b10851a8d38846bc0a0fdea450.bindPopup(popup_1d78cf7310b4e130a8580a899a8ed163)
+        ;
+
+        
+    
+    
+            var circle_marker_98f7d98352293bdbbf9bf7196eeb660b = L.circleMarker(
+                [39.85841, -104.667],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_b1cbc54a35b3da12b262492b1994d274 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a64ac2fd96cb4cd47154495bc0c49e9 = $(`<div id="html_7a64ac2fd96cb4cd47154495bc0c49e9" style="width: 100.0%; height: 100.0%;"><b>DEN</b></div>`)[0];
+                popup_b1cbc54a35b3da12b262492b1994d274.setContent(html_7a64ac2fd96cb4cd47154495bc0c49e9);
+            
+        
+
+        circle_marker_98f7d98352293bdbbf9bf7196eeb660b.bindPopup(popup_b1cbc54a35b3da12b262492b1994d274)
+        ;
+
+        
+    
+    
+            var circle_marker_551d86da2d98d6057eb45ffdb6367b3e = L.circleMarker(
+                [32.89595, -97.0372],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_37aacf4d5197941b76fdbbfdae04924d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fd8c0cfa31ed1293e9c7dabe2a731d2 = $(`<div id="html_4fd8c0cfa31ed1293e9c7dabe2a731d2" style="width: 100.0%; height: 100.0%;"><b>DFW</b></div>`)[0];
+                popup_37aacf4d5197941b76fdbbfdae04924d.setContent(html_4fd8c0cfa31ed1293e9c7dabe2a731d2);
+            
+        
+
+        circle_marker_551d86da2d98d6057eb45ffdb6367b3e.bindPopup(popup_37aacf4d5197941b76fdbbfdae04924d)
+        ;
+
+        
+    
+    
+            var circle_marker_0502e29c2e6002d286fc4ae8043d73c8 = L.circleMarker(
+                [26.07258, -80.15275],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_6210d321a41ac2750e23c871b00e1beb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6bcaeb30e5fe5241cba27a866c93b7cf = $(`<div id="html_6bcaeb30e5fe5241cba27a866c93b7cf" style="width: 100.0%; height: 100.0%;"><b>FLL</b></div>`)[0];
+                popup_6210d321a41ac2750e23c871b00e1beb.setContent(html_6bcaeb30e5fe5241cba27a866c93b7cf);
+            
+        
+
+        circle_marker_0502e29c2e6002d286fc4ae8043d73c8.bindPopup(popup_6210d321a41ac2750e23c871b00e1beb)
+        ;
+
+        
+    
+    
+            var circle_marker_e6e6e87cd566966facf6b807640f9afe = L.circleMarker(
+                [21.31869, -157.92241],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_49a724279d91f54d24e2bfd27cd9d6f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3c1fe8fb35b39b91c0ee06fbdbbe050 = $(`<div id="html_d3c1fe8fb35b39b91c0ee06fbdbbe050" style="width: 100.0%; height: 100.0%;"><b>HNL</b></div>`)[0];
+                popup_49a724279d91f54d24e2bfd27cd9d6f1.setContent(html_d3c1fe8fb35b39b91c0ee06fbdbbe050);
+            
+        
+
+        circle_marker_e6e6e87cd566966facf6b807640f9afe.bindPopup(popup_49a724279d91f54d24e2bfd27cd9d6f1)
+        ;
+
+        
+    
+    
+            var circle_marker_101f37f5c70f17da65aa4cd330a41bb8 = L.circleMarker(
+                [40.63975, -73.77893],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_e2cf936b187b75d84e720084a7397b97 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c498f645f32ce29beb9c3d32b31dbba = $(`<div id="html_9c498f645f32ce29beb9c3d32b31dbba" style="width: 100.0%; height: 100.0%;"><b>JFK</b></div>`)[0];
+                popup_e2cf936b187b75d84e720084a7397b97.setContent(html_9c498f645f32ce29beb9c3d32b31dbba);
+            
+        
+
+        circle_marker_101f37f5c70f17da65aa4cd330a41bb8.bindPopup(popup_e2cf936b187b75d84e720084a7397b97)
+        ;
+
+        
+    
+    
+            var circle_marker_e93666a5a994ce485064115b15f924b8 = L.circleMarker(
+                [36.08036, -115.15233],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_554ff69440501dfa13bb9f250ee2878f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0f4d9df31d16b3a974ccb1bdfe6cfdc0 = $(`<div id="html_0f4d9df31d16b3a974ccb1bdfe6cfdc0" style="width: 100.0%; height: 100.0%;"><b>LAS</b></div>`)[0];
+                popup_554ff69440501dfa13bb9f250ee2878f.setContent(html_0f4d9df31d16b3a974ccb1bdfe6cfdc0);
+            
+        
+
+        circle_marker_e93666a5a994ce485064115b15f924b8.bindPopup(popup_554ff69440501dfa13bb9f250ee2878f)
+        ;
+
+        
+    
+    
+            var circle_marker_14716164e8f07316b23792e1e973e7e0 = L.circleMarker(
+                [33.94254, -118.40807],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_b530d4fa680f95b6e4441e1641eba0f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5415846b0b8403c2459ae929806be363 = $(`<div id="html_5415846b0b8403c2459ae929806be363" style="width: 100.0%; height: 100.0%;"><b>LAX</b></div>`)[0];
+                popup_b530d4fa680f95b6e4441e1641eba0f1.setContent(html_5415846b0b8403c2459ae929806be363);
+            
+        
+
+        circle_marker_14716164e8f07316b23792e1e973e7e0.bindPopup(popup_b530d4fa680f95b6e4441e1641eba0f1)
+        ;
+
+        
+    
+    
+            var circle_marker_4d80ad483cd38afb072b8cddccf5f7b3 = L.circleMarker(
+                [40.77724, -73.87261],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_f08901162e4fb0d4b75c55c1f7cdc365 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2054d71ebbc6cddf96af62e73e654ce8 = $(`<div id="html_2054d71ebbc6cddf96af62e73e654ce8" style="width: 100.0%; height: 100.0%;"><b>LGA</b></div>`)[0];
+                popup_f08901162e4fb0d4b75c55c1f7cdc365.setContent(html_2054d71ebbc6cddf96af62e73e654ce8);
+            
+        
+
+        circle_marker_4d80ad483cd38afb072b8cddccf5f7b3.bindPopup(popup_f08901162e4fb0d4b75c55c1f7cdc365)
+        ;
+
+        
+    
+    
+            var circle_marker_9aca8f861df9dfe51469d21014e99fe1 = L.circleMarker(
+                [28.42889, -81.31603],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_7bb100e025ad870f49c3301ab6cf0407 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6836ab7f2142bad09b2d38e1d5951a89 = $(`<div id="html_6836ab7f2142bad09b2d38e1d5951a89" style="width: 100.0%; height: 100.0%;"><b>MCO</b></div>`)[0];
+                popup_7bb100e025ad870f49c3301ab6cf0407.setContent(html_6836ab7f2142bad09b2d38e1d5951a89);
+            
+        
+
+        circle_marker_9aca8f861df9dfe51469d21014e99fe1.bindPopup(popup_7bb100e025ad870f49c3301ab6cf0407)
+        ;
+
+        
+    
+    
+            var circle_marker_2a48490a98563f9084280d8c45333a08 = L.circleMarker(
+                [20.89865, -156.43046],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_72692a71ecdd0dcb803055ed2008b044 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe0ac1992055fd45b7dc292f9eaea6da = $(`<div id="html_fe0ac1992055fd45b7dc292f9eaea6da" style="width: 100.0%; height: 100.0%;"><b>OGG</b></div>`)[0];
+                popup_72692a71ecdd0dcb803055ed2008b044.setContent(html_fe0ac1992055fd45b7dc292f9eaea6da);
+            
+        
+
+        circle_marker_2a48490a98563f9084280d8c45333a08.bindPopup(popup_72692a71ecdd0dcb803055ed2008b044)
+        ;
+
+        
+    
+    
+            var circle_marker_7dad8dd9dbc80f69734f60d25ad46bb0 = L.circleMarker(
+                [41.9796, -87.90446],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_f9ef8659acd631951ef183375b8fb9bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21f45d8a2e665c30fdeca873c1f32220 = $(`<div id="html_21f45d8a2e665c30fdeca873c1f32220" style="width: 100.0%; height: 100.0%;"><b>ORD</b></div>`)[0];
+                popup_f9ef8659acd631951ef183375b8fb9bb.setContent(html_21f45d8a2e665c30fdeca873c1f32220);
+            
+        
+
+        circle_marker_7dad8dd9dbc80f69734f60d25ad46bb0.bindPopup(popup_f9ef8659acd631951ef183375b8fb9bb)
+        ;
+
+        
+    
+    
+            var circle_marker_08637c42191752687b31f5cf5ea95e76 = L.circleMarker(
+                [39.87195, -75.24114],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_2b8b5b1c5d1f6a0b06511ede98e30f3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2bccdcfffaa2b5f54073733c64ddd7ab = $(`<div id="html_2bccdcfffaa2b5f54073733c64ddd7ab" style="width: 100.0%; height: 100.0%;"><b>PHL</b></div>`)[0];
+                popup_2b8b5b1c5d1f6a0b06511ede98e30f3d.setContent(html_2bccdcfffaa2b5f54073733c64ddd7ab);
+            
+        
+
+        circle_marker_08637c42191752687b31f5cf5ea95e76.bindPopup(popup_2b8b5b1c5d1f6a0b06511ede98e30f3d)
+        ;
+
+        
+    
+    
+            var circle_marker_06023f234fef4dee1f524886dca05923 = L.circleMarker(
+                [33.43417, -112.00806],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_0d073c7a98398f3aaef3c86bba8f8584 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3954995b83c622de2bcb6413f92264ca = $(`<div id="html_3954995b83c622de2bcb6413f92264ca" style="width: 100.0%; height: 100.0%;"><b>PHX</b></div>`)[0];
+                popup_0d073c7a98398f3aaef3c86bba8f8584.setContent(html_3954995b83c622de2bcb6413f92264ca);
+            
+        
+
+        circle_marker_06023f234fef4dee1f524886dca05923.bindPopup(popup_0d073c7a98398f3aaef3c86bba8f8584)
+        ;
+
+        
+    
+    
+            var circle_marker_fa627e268a6967382c2de65beb2e310f = L.circleMarker(
+                [32.73356, -117.18966],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_fe7767ba17c2e091307b8aee57004baa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b34f8f8157432b359581c6f2fc3d408 = $(`<div id="html_7b34f8f8157432b359581c6f2fc3d408" style="width: 100.0%; height: 100.0%;"><b>SAN</b></div>`)[0];
+                popup_fe7767ba17c2e091307b8aee57004baa.setContent(html_7b34f8f8157432b359581c6f2fc3d408);
+            
+        
+
+        circle_marker_fa627e268a6967382c2de65beb2e310f.bindPopup(popup_fe7767ba17c2e091307b8aee57004baa)
+        ;
+
+        
+    
+    
+            var circle_marker_d3a4ceba4f426a918eaa1c27548a4ec0 = L.circleMarker(
+                [47.44898, -122.30931],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_7cd255480718699fb0ba15abcfd1afca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_25cdf66a161bba9a6dfd4bbd33cbda7b = $(`<div id="html_25cdf66a161bba9a6dfd4bbd33cbda7b" style="width: 100.0%; height: 100.0%;"><b>SEA</b></div>`)[0];
+                popup_7cd255480718699fb0ba15abcfd1afca.setContent(html_25cdf66a161bba9a6dfd4bbd33cbda7b);
+            
+        
+
+        circle_marker_d3a4ceba4f426a918eaa1c27548a4ec0.bindPopup(popup_7cd255480718699fb0ba15abcfd1afca)
+        ;
+
+        
+    
+    
+            var circle_marker_85a2722b3d85d508c1675191afc97127 = L.circleMarker(
+                [37.619, -122.37484],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_bb9e4342f82dd392d3210b7b29172d74 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ffb9a902cda1171490d89dbf38c1b2f = $(`<div id="html_0ffb9a902cda1171490d89dbf38c1b2f" style="width: 100.0%; height: 100.0%;"><b>SFO</b></div>`)[0];
+                popup_bb9e4342f82dd392d3210b7b29172d74.setContent(html_0ffb9a902cda1171490d89dbf38c1b2f);
+            
+        
+
+        circle_marker_85a2722b3d85d508c1675191afc97127.bindPopup(popup_bb9e4342f82dd392d3210b7b29172d74)
+        ;
+
+        
+    
+    
+            var circle_marker_9249c685b6306d4936b703a38bb8bf00 = L.circleMarker(
+                [27.97547, -82.53325],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_6719ced2c6d909828ff5e3c8eb582b35);
+        
+    
+        var popup_c6a2cb1b527e9641b5943c309abb026d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2ecb5ef25dbbe067ab9011b64d09e227 = $(`<div id="html_2ecb5ef25dbbe067ab9011b64d09e227" style="width: 100.0%; height: 100.0%;"><b>TPA</b></div>`)[0];
+                popup_c6a2cb1b527e9641b5943c309abb026d.setContent(html_2ecb5ef25dbbe067ab9011b64d09e227);
+            
+        
+
+        circle_marker_9249c685b6306d4936b703a38bb8bf00.bindPopup(popup_c6a2cb1b527e9641b5943c309abb026d)
+        ;
+
+        
+    
+</script>
+</html>

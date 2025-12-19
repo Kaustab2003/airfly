@@ -1,0 +1,211 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Streamlit
+.streamlit/
+
+# Data files (large CSVs - keep processed versions only)
+# Uncomment if you want to exclude large raw data files
+# dataset/flights.csv
+# dataset/airlines_flights_data.csv
+# dataset/GlobalWeatherRepository.csv
+
+# Temporary data files
+*.tmp
+*.temp
+*.cache
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Documentation builds
+docs/_build/
+site/
+
+# Distribution / packaging
+*.whl
+
+# Backup files
+*.bak
+*.swp
+*~
+.backup/
+
+# Model files (if ML models added later)
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.onnx
+
+# Output files
+output/
+exports/
+*.pdf
+*.pptx
+*.docx
+# Keep presentation_slides.md but exclude generated outputs
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Excel files (unless needed for analysis)
+*.xlsx
+*.xls
+~$*.xlsx
+~$*.xls
+
+# Compressed files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Windows specific
+*.exe
+*.dll
+*.msi
+
+# macOS specific
+.AppleDouble
+.LSOverride
+Icon
+
+# Linux specific
+*~
+.directory
+.Trash-*
+
+# Project specific
+# Keep these commented unless you want to exclude them
+# analysis_summary.json
+# final_processed_flights.csv
+
+# Temporary development files
+scratch.py
+test_*.py.bak
+debug_*.py
+temp_analysis.ipynb
+
+# Docker (for future use)
+*.dockerignore.bak
+docker-compose.override.yml
+
+# Cloud deployment configs (sensitive)
+.aws/
+.azure/
+.gcloud/
+*.pem
+*.key
+credentials.json
+
+# Large visualization outputs
+figures/large/
+plots/high_res/
+
+# Node modules (if any JS tooling added)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python profiling
+*.prof
+*.pstats
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# pytype
+.pytype/
+
+# Cython
+cython_debug/
