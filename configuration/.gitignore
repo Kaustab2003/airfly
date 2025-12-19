@@ -57,11 +57,11 @@ ipython_config.py
 # Streamlit
 .streamlit/
 
-# Data files (large CSVs - keep processed versions only)
-# Uncomment if you want to exclude large raw data files
-# dataset/flights.csv
-# dataset/airlines_flights_data.csv
-# dataset/GlobalWeatherRepository.csv
+ Data files (large CSVs - keep processed versions only)
+ Uncomment if you want to exclude large raw data files
+ dataset/flights.csv
+ dataset/airlines_flights_data.csv
+ dataset/GlobalWeatherRepository.csv
 
 # Temporary data files
 *.tmp
