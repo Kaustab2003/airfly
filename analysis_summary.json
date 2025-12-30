@@ -1,0 +1,8 @@
+{
+    "total_flights": 5819079,
+    "avg_delay": "4.32748",
+    "on_time_pct": 82.41134035128239,
+    "cancellation_rate": 1.5446430612129514,
+    "unique_airlines": 14,
+    "unique_routes": 8609
+}
